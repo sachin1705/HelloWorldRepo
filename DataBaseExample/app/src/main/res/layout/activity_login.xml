@@ -21,14 +21,14 @@
             <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <AutoCompleteTextView android:id="@+id/email" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:hint="@string/prompt_email"
-                    android:inputType="textEmailAddress" android:maxLines="1"
+                <AutoCompleteTextView android:id="@+id/phnNumber" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:hint="@string/prompt_phone_numer"
+                    android:inputType="phone" android:maxLines="1"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
-            <EditText
+    <!--        <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/phnNumber"
@@ -48,7 +48,9 @@
                 android:hint="@string/prompt_last_name"
                 android:layout_gravity="center_horizontal" />
 
-            <!--  <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
+                -->
+
+              <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content">
 
                   <EditText android:id="@+id/password" android:layout_width="match_parent"
@@ -58,13 +60,18 @@
                       android:imeOptions="actionUnspecified" android:inputType="textPassword"
                       android:maxLines="1" android:singleLine="true" />
 
-              </android.support.design.widget.TextInputLayout>   -->
+              </android.support.design.widget.TextInputLayout>
 
 
             <Button android:id="@+id/email_sign_in_button" style="?android:textAppearanceSmall"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:layout_marginTop="16dp" android:text="@string/action_sign_in"
                 android:textStyle="bold" />
+
+            <TextView android:id="@+id/email_sign_up_button" style="?android:textAppearanceSmall"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:text="@string/action_sign_up"
+                android:textStyle="bold" android:gravity="center" />
 
 
 
