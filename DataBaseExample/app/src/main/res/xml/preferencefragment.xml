@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Vehicle Type">
+
+        <CheckBoxPreference
+            android:key="checkbox_preference"
+            android:title="4 Wheeler"
+            android:summary="Car" />
+
+        <CheckBoxPreference
+            android:key="checkbox_preference"
+            android:title="2 Wheeler"
+            android:summary="Bike/Activa" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Vehicle Type">
+
+        <ListPreference android:key="gpsDistance"
+            android:entries="@array/gpsDistance"
+            android:entryValues="@array/gpsDistance_items"
+            android:summary="GPS maximum inaccuracy in meters before listener will stop looking for a better value"
+            android:title="GPS Max Inaccuracy "
+            android:defaultValue="10">
+
+        </ListPreference>
+
+    </PreferenceCategory>
+</PreferenceScreen>

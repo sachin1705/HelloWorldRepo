@@ -346,14 +346,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // TODO: attempt authentication against a network service.
             Map<String,String> dataToSend = new HashMap<>();
             dataToSend.put("id", mPhoneNumber);
-            dataToSend.put("firstname", mPassword);
-            dataToSend.put("lastname", mPassword);
-            dataToSend.put("age", "23");
+            dataToSend.put("password", mPassword);
             String encodedStr = getEncodedData(dataToSend);
             BufferedReader reader = null;
+            String response=null;
             try {
                 //Converting address String to URL
-                URL url = new URL("http://alpha.logicbag.com/studentRegistration.php");
+                URL url = new URL("http://alpha.logicbag.com/loginAuth.php");
                 //Opening the connection (Not setting or using CONNECTION_TIMEOUT)
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
@@ -373,15 +372,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
-                String line;
-                while((line = reader.readLine()) != null) { //Read till there is something available
-                    sb.append(line + "\n");     //Reading and saving line by line - not all at once
+                while((response = reader.readLine()) != null) { //Read till there is something available
+                    sb.append(response + "\n");     //Reading and saving line by line - not all at once
                 }
-                line = sb.toString();           //Saving complete data received in string, you can do it differently
+                response = sb.toString().trim();          //Saving complete data received in string, you can do it differently
 
                 //Just check to the values received in Logcat
                 Log.i("custom_check","The values received in the store part are as follows:");
-                Log.i("custom_check", line);
+                Log.i("custom_check", response);
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -394,7 +392,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     }
                 }
             }
-            return true;
+            return response.equals("Success");
         }
 
         @Override
@@ -403,10 +401,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
+                Intent intent=new Intent(getApplicationContext(),RequestOfferPage.class);
+                startActivity(intent);
                 finish();
             } else {
-//                mPasswordView.setError(getString(R.string.error_incorrect_password));
-//                mPasswordView.requestFocus();
+                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.requestFocus();
             }
         }
 

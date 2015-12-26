@@ -10,6 +10,8 @@
     <string name="action_sign_in">Login</string>
     <string name="action_sign_up">No account yet?Create one</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="offerRide">Offer Ride</string>
+    <string name="requestRide">Request Ride</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
@@ -17,4 +19,49 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string-array name="gpsDistance"><item>2m </item><item>5m </item>
+        <item>10m par défaut</item>
+        <item>15m </item>
+        <item>20m</item>
+        <item>30m </item>
+
+    </string-array>
+
+    <string-array name="gpsTimeout"><item>Désactiver GPS Listener</item><item>5 seconds</item>
+        <item>10 seconds</item>
+        <item>15 seconds</item>
+        <item>20 seconds</item>
+        <item>30 seconds</item>
+        <item>45 seconds</item>
+
+    </string-array>
+    <string-array name="gpsTimeout_items"><item>0</item><item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>45000</item>
+
+    </string-array>
+    <string-array name="gpsDistance_items"><item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+    </string-array>
+
+    <string name="destination_prompt">Choose a destination</string>
+
+    <string-array name="destination_array">
+        <item>Malaysia</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
 </resources>
